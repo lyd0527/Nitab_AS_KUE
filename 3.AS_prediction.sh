@@ -1,7 +1,10 @@
 #############################################################
 #### AS prediction(rMATs)
 #############################################################
-
+rmats.py --b1 CKR.txt --gtf Nitab-K.gtf -t paired --readLength 150 --nthread 50 --od CKR --statoff --tmp CKR/tmp
+rmats.py --b1 LKR.txt --gtf Nitab-K.gtf -t paired --readLength 150 --nthread 50 --od LKR --statoff --tmp LKR/tmp
+rmats.py --b1 CKS.txt --gtf Nitab-K.gtf -t paired --readLength 150 --nthread 50 --od CKS --statoff --tmp CKS/tmp
+rmats.py --b1 LKS.txt --gtf Nitab-K.gtf -t paired --readLength 150 --nthread 50 --od LKS --statoff --tmp LKS/tmp
 
 #############################################################
 #### AS prediction(SUPPA)
