@@ -11,7 +11,6 @@ rmats.py --b1 CKS.txt --b2 LKS.txt --gtf Nitab-K.gtf -t paired --readLength 150 
 ### DESeq2.R
 
 library(DESeq2)
-library(clusterProfiler)
 
 colData <- data.frame(row.names = colnames(expr),group_list = group_list)
 dds <- DESeqDataSetFromMatrix(countData = expr,colData = colData,design = ~group_list)
@@ -38,19 +37,12 @@ DEG_DESeq2$regulated[loc_down] <- "down"
 
 table(DEG_DESeq2$regulated)
 
-dir.create("./3.deg_DESeq2_result")
+dir.create("./DESeq2_result")
 library(openxlsx)
-write.xlsx(DEG_DESeq2,file = "./3.deg_DESeq2_result/DEG_DESeq2_all.xlsx")
-save(DEG_DESeq2,file = "./3.deg_DESeq2_result/DEG_DEGSeq2_all.rdata")
+write.xlsx(DEG_DESeq2,file = "./DESeq2_result/DEG_DESeq2_all.xlsx")
+save(DEG_DESeq2,file = "./DESeq2_result/DEG_DEGSeq2_all.rdata")
 
 # DEG_DESeq2 <- DEG_DESeq2[,c(1,2,4,7)]
-# save(DEG_DESeq2,file = "./3.deg_DESeq2_result/DEG_DEGSeq2_nrDEG.rdata")
+# save(DEG_DESeq2,file = "./DESeq2_result/DEG_DEGSeq2_nrDEG.rdata")
 
 head(DEG_DESeq2)
-
-exp <- c(t(expr_cpm[match("HSD17B6",rownames(expr_cpm)),]))
-test <- data.frame(value = exp, group = group_list)
-
-ggplot(data = test, aes(x = group, y = value, fill = group)) + geom_boxplot()
-
-
