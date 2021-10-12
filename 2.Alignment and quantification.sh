@@ -14,10 +14,12 @@ STAR --twopassMode Basic --outSAMstrandField intronMotif \
                --readFilesIn $PE1 $PE2
 
 
+#############################################################
 #### RABT
-```
+#############################################################
+
 stringtie ....
-```
+
 
 #############################################################
 #### Quantification
@@ -25,6 +27,5 @@ stringtie ....
 
 featureCounts -T $nt -p -g gene_id -a $gtf -o Samples.featureCounts.txt *.bam
 
-#### Quantification
 
-FeatureCounts
+
