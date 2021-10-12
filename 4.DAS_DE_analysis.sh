@@ -1,5 +1,9 @@
 #### DAS
 
+#### Root
+rmats.py --b1 CKR.txt --b2 LKR.txt --gtf Nitab-K.gtf -t paired --readLength 150 --nthread 50 --od KR --tmp KR/tmp
+#### Shoot
+rmats.py --b1 CKS.txt --b2 LKS.txt --gtf Nitab-K.gtf -t paired --readLength 150 --nthread 50 --od KS --tmp KS/tmp
 
 
 ### DE_analysis
