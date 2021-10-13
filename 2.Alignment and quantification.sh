@@ -2,8 +2,8 @@
 
 id=test
 db_star=Nitab_star
-PE1=fastq2
-PE2=fastq1
+PE1=test_1.pe
+PE2=test_1.pe
 nt=30
 
 STAR --twopassMode Basic --outSAMstrandField intronMotif \
